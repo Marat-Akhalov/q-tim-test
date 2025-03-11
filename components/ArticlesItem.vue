@@ -1,13 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  image: string;
+  preview: string;
+}>();
+</script>
 
 <template>
   <li class="articles__item">
     <img
-      src=""
-      alt=""
+      :src="image"
+      alt="Article image"
       class="articles__img"
     />
-    <p class="articles__descr"></p>
+    <p class="articles__descr">{{ preview }}</p>
     <NuxtLink class="articles__link">Read More</NuxtLink>
   </li>
 </template>

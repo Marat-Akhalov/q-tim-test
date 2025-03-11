@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { Article } from '~/types/Article';
+
+defineProps<{
+  articles: Article[];
+}>();
+</script>
 
 <template>
   <ul class="articles__list list-reset">
