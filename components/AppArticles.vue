@@ -34,6 +34,7 @@ const visibleItems = computed(() => (data.value ? data.value.slice(0, 8) : []));
 <style scoped lang="scss">
 .articles {
   padding-top: 114px;
+  padding-bottom: 140px;
 
   &__header {
     margin-bottom: 40px;
