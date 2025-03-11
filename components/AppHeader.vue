@@ -46,4 +46,37 @@
   </header>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.header {
+  display: flex;
+  align-items: center;
+  padding: 40px 40px;
+
+  &__logo {
+    margin-right: auto;
+  }
+
+  &__nav {
+    margin-right: 91px;
+  }
+
+  &__language {
+    margin-right: 16px;
+  }
+
+  &__action-btn {
+    border-radius: 999px;
+    padding: 16px 32px;
+    font-size: 20px;
+    color: #fff;
+    background-color: var(--clr-text);
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 58px;
+  }
+}
+</style>
