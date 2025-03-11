@@ -2,6 +2,7 @@
 
 <template>
   <div class="page-wrap">
+    <AppHeader />
     <div class="container">
       <main>
         <slot />
