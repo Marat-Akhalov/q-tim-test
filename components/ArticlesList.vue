@@ -2,7 +2,7 @@
 
 <template>
   <ul class="articles__list list-reset">
-    <AppArticles />
+    <ArticlesItem />
   </ul>
 </template>
 
