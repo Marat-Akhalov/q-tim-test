@@ -8,7 +8,12 @@ defineProps<{
 
 <template>
   <ul class="articles__list list-reset">
-    <ArticlesItem />
+    <ArticlesItem
+      v-for="article in articles"
+      :key="article.id"
+      :preview="article.preview"
+      :image="article.image"
+    />
   </ul>
 </template>
 

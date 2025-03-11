@@ -1,9 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { Article } from '~/types/Article';
+
+const { data } = useFetch<Article[]>(
+  `https://6082e3545dbd2c001757abf5.mockapi.io/qtim-test-work/posts/`
+);
+
+const visibleItems = computed(() => (data.value ? data.value.slice(0, 8) : []));
+</script>
 
 <template>
   <section class="articles">
     <h2 class="articles__header">Articles</h2>
-    <ArticlesList />
+    <ArticlesList :articles="visibleItems" />
   </section>
 </template>
 
