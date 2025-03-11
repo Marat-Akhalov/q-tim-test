@@ -17,4 +17,12 @@ defineProps<{
   </ul>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.articles {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 60px 32px;
+  }
+}
+</style>
