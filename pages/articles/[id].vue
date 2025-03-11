@@ -7,7 +7,9 @@ const { data, error } = await useFetch<Article>(
   `https://6082e3545dbd2c001757abf5.mockapi.io/qtim-test-work/posts/${id}`
 );
 
-console.log(data.value);
+if (error.value) {
+  showError({ message: error.value.message, cause: error.value.cause });
+}
 </script>
 
 <template>

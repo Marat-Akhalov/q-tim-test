@@ -24,6 +24,7 @@ defineProps<{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 60px 32px;
+    margin-bottom: 16px;
   }
 }
 </style>

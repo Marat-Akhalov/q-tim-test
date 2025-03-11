@@ -3,22 +3,46 @@ import type { Article } from '~/types/Article';
 
 const articles = ref<Article[]>([]);
 
-const { data, status } = useFetch<Article[]>(
+const { data, status, error } = useFetch<Article[]>(
   `https://6082e3545dbd2c001757abf5.mockapi.io/qtim-test-work/posts/`
 );
+
+if (error.value) {
+  showError({
+    cause: error.value.cause,
+    message: error.value.message,
+  });
+}
 
 if (data.value) {
   articles.value = data.value;
 }
 
-const page = ref(1);
-const visibleItems = computed(() => (data.value ? data.value.slice(0, 8) : []));
+const page = ref<number>(1);
+const isLoading = ref<boolean>(false);
+const itemsPerPage = 8;
+const visibleItems = computed(() => {
+  if (!data.value) return [];
+
+  const start = (page.value - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+
+  return data.value.slice(start, end);
+});
+
+watch(page, () => {
+  isLoading.value = true;
+
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 200);
+});
 </script>
 
 <template>
   <section class="articles">
     <h2 class="articles__header">Articles</h2>
-    <ArticlesSkeleton v-if="status === 'pending'" />
+    <ArticlesSkeleton v-if="status === 'pending' || isLoading" />
     <ArticlesList
       v-else
       :articles="visibleItems"
