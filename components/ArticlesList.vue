@@ -11,6 +11,7 @@ defineProps<{
     <ArticlesItem
       v-for="article in articles"
       :key="article.id"
+      :id="article.id"
       :preview="article.preview"
       :image="article.image"
     />

@@ -1,19 +1,13 @@
 <script setup lang="ts">
 defineProps<{
+  id: string;
   image: string;
   preview: string;
 }>();
-
-const isHighlighted = ref<boolean>(false);
-const toggleHighlighted = () => (isHighlighted.value = !isHighlighted.value);
 </script>
 
 <template>
-  <li
-    class="articles__item"
-    @mouseover="toggleHighlighted"
-    @mouseleave="toggleHighlighted"
-  >
+  <li class="articles__item">
     <!-- в img временно подгружается моковое статичное изображения тк эндпоинт не работает -->
     <img
       src="@/assets/img/article-img.png"
@@ -24,7 +18,7 @@ const toggleHighlighted = () => (isHighlighted.value = !isHighlighted.value);
       <p class="articles__descr">{{ preview }}</p>
       <NuxtLink
         class="articles__link"
-        :to="{ name: 'articles-id', params: { id: 1 } }"
+        :to="{ name: 'articles-id', params: { id: id } }"
       >
         Read More
       </NuxtLink>
