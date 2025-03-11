@@ -50,14 +50,14 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 40px 40px;
+  padding: 37px 40px;
 
   &__logo {
     margin-right: auto;
   }
 
   &__nav {
-    margin-right: 91px;
+    margin-right: 108px;
   }
 
   &__language {
@@ -68,6 +68,7 @@
     border-radius: 999px;
     padding: 16px 32px;
     font-size: 20px;
+    line-height: 1;
     color: #fff;
     background-color: var(--clr-text);
   }
