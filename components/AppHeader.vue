@@ -41,7 +41,14 @@
         </li>
       </ul>
     </nav>
-    <div class="header__language">Flag</div>
+    <div class="header__language">
+      <button class="header__change-language btn-reset">
+        <img
+          src="@/assets/img/united-kingdom.svg"
+          alt=""
+        />
+      </button>
+    </div>
     <button class="header__action-btn btn-reset">Let's work</button>
   </header>
 </template>
@@ -57,7 +64,7 @@
   }
 
   &__nav {
-    margin-right: 108px;
+    margin-right: 98px;
   }
 
   &__language {
@@ -66,11 +73,20 @@
 
   &__action-btn {
     border-radius: 999px;
-    padding: 16px 32px;
+    padding: 16px 27px;
     font-size: 20px;
     line-height: 1;
     color: #fff;
     background-color: var(--clr-text);
+    cursor: pointer;
+  }
+
+  &__change-language {
+    display: inline-flex;
+    border-radius: 100%;
+    border: 2px solid #eceece;
+    padding: 10px;
+    cursor: pointer;
   }
 }
 
