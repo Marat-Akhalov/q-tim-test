@@ -24,9 +24,10 @@ const toggleHighlighted = () => (isHighlighted.value = !isHighlighted.value);
       <p class="articles__descr">{{ preview }}</p>
       <NuxtLink
         class="articles__link"
-        to="/"
-        >Read More</NuxtLink
+        :to="{ name: 'articles-id', params: { id: 1 } }"
       >
+        Read More
+      </NuxtLink>
     </div>
   </li>
 </template>
