@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>Test page</div>
+  <AppArticles />
 </template>
 
 <style scoped lang="scss"></style>
