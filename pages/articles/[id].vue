@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Article } from '~/types/Article';
 
+useHead({
+  meta: [{ name: 'description', content: 'More detailed article info' }],
+});
+
 const { id } = useRoute().params;
 
 const { data, error } = await useFetch<Article>(

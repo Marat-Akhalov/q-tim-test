@@ -42,10 +42,13 @@
       </ul>
     </nav>
     <div class="header__language">
-      <button class="header__change-language btn-reset">
+      <button
+        class="header__change-language btn-reset"
+        aria-label="Change language"
+      >
         <img
           src="@/assets/img/united-kingdom.svg"
-          alt=""
+          alt="Flag"
         />
       </button>
     </div>

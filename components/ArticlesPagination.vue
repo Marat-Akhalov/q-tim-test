@@ -27,12 +27,16 @@ const changePage = (idx: number) => {
           class="pagination__btn btn-reset"
           :class="{ 'pagination__btn--active': page === idx + 1 }"
           @click="changePage(idx + 1)"
+          aria-label="Change page"
         >
           {{ idx + 1 }}
         </button>
       </li>
     </ul>
-    <button class="pagination__next btn-reset">
+    <button
+      class="pagination__next btn-reset"
+      aria-label="Next page"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

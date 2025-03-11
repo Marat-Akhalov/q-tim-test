@@ -13,12 +13,15 @@ defineProps<{
       src="@/assets/img/article-img.png"
       alt="Article image"
       class="articles__img"
+      width="280"
+      height="280"
     />
     <div class="article__content">
       <p class="articles__descr">{{ preview }}</p>
       <NuxtLink
         class="articles__link"
         :to="{ name: 'articles-id', params: { id: id } }"
+        aria-label="Open article"
       >
         Read More
       </NuxtLink>
